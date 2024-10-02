@@ -7,7 +7,7 @@ import { UserProvider } from "./components/UserContext";
 import Header from "./components/Header";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Bookmark from "./components/BookMark";
-import StoryViewerPage from "./components/StoryviewerPage";
+import StoryViewerPage from "./components/StoryViewerPage";
 
 function App() {
   const [count, setCount] = useState(0);
