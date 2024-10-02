@@ -9,7 +9,7 @@
   "routes": [
     {
       "src": "/api/(.*)", // Route for your API endpoints
-      "dest": "/server.js" // Change this to your main server file if different
+      "dest": "/index.js" // Change this to your main server file if different
     }
   ],
   "env": {
