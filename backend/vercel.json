@@ -1,26 +1,17 @@
 {
+  "installCommand": "npm install --legacy-peer-deps",
   "version": 2,
   "builds": [
     {
-      "src": "index.js", // Change this to your main server file (e.g., index.js or app.js)
+      "src": "index.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "src/**/*",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
-    {
-      "src": "/api/(.*)", // Route for your API endpoints
-      "dest": "/index.js" // Change this to your main server file if different
-    }
-  ],
-  "env": {
-    "DATABASE_URL": "mongodb+srv://raunakrana101:raunak123@task.ipcmm.mongodb.net/aux-db?retryWrites=true&w=majority&appName=task", // Add your environment variables here
-    "PORT": "8080"
-    
-  },
-  "functions": {
-    "api/*.js": {
-      "memory": 1024,
-      "maxDuration": 10
-    }
-  }
+    { "src": "/(.*)", "dest": "/" }
+  ]
 }
