@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.js", // Change this to your main server file (e.g., index.js or app.js)
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)", // Route for your API endpoints
+      "dest": "/server.js" // Change this to your main server file if different
+    }
+  ],
+  "env": {
+    "DATABASE_URL": "mongodb+srv://raunakrana101:raunak123@task.ipcmm.mongodb.net/aux-db?retryWrites=true&w=majority&appName=task", // Add your environment variables here
+    "PORT": "8080"
+    
+  },
+  "functions": {
+    "api/*.js": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  }
+}
