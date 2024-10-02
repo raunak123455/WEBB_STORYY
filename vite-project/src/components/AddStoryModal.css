@@ -1,0 +1,126 @@
+.modal-overlay2 {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(70, 53, 53, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  width: 100%;
+}
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 500px;
+  position: relative;
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.slide-navigation {
+  display: flex;
+  gap: 10px;
+}
+.slide-button,
+.add-slide-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+.slide-button.active {
+  background-color: #e6f0ff;
+  color: #0066cc;
+}
+.add-close-button {
+  position: absolute;
+  top: 10px;
+  right: -280px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  position: absolute;
+  top: 0px;
+  left: 201px;
+  color: black;
+}
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.form-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.form-group label {
+  width: 100px;
+  text-align: left;
+  padding-top: 8px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.help-text {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+}
+.button-previous {
+  background-color: #4caf50;
+  border-radius: 15px;
+}
+.button-next {
+  background-color: #2196f3;
+  margin-left: 5px;
+  border-radius: 15px;
+}
+.button-post {
+  background-color: #f44336;
+  border-radius: 15px;
+}
+.icon {
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .modal-overlay2 {
+    position: fixed;
+    overflow: hidden;
+  }
+  .add-close-button {
+    position: absolute;
+    right: -140px;
+    top: 20px;
+  }
+}
