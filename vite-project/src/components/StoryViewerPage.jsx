@@ -17,7 +17,7 @@ const StoryViewerPage = () => {
       console.log("Fetching story...", name, id);
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/user/post/${id}`
+          `https://final-deploy-1.onrender.com/api/user/post/${id}`
         );
         console.log(response);
         setStory(response.data); // Assuming the response data contains the story details
