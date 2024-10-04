@@ -23,7 +23,7 @@ const Home = () => {
     const fetchUserIdByName = async () => {
       try {
         const response = await axios.get(
-          `https://final-deploy-1.onrender.com/user/by-name/${name}`
+          `https://final-deploy-1.onrender.com/api/user/by-name/${name}`
         );
         setUserId(response.data.userId);
       } catch (error) {
