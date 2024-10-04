@@ -94,7 +94,7 @@ const StoryViewer = ({ post, story, onClose }) => {
 
       // Send the request to the backend to increment the like count
       const response = await axios.put(
-        `http://localhost:8080/api/user/post/${postId}/slide/${currentSlide._id}/like`
+        `https://final-deploy-1.onrender.com/api/user/post/${postId}/slide/${currentSlide._id}/like`
       );
 
       // Update like count with response from server (in case the backend is the source of truth)
@@ -108,7 +108,7 @@ const StoryViewer = ({ post, story, onClose }) => {
   const handleBookmarkClick = async () => {
     try {
       const response = await axios.post(
-        `http://localhost:8080/api/user/posts/${postId}/bookmark`,
+        `https://final-deploy-1.onrender.com/api/user/posts/${postId}/bookmark`,
         { userId }
       );
 
