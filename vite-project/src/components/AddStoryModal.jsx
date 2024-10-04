@@ -81,7 +81,7 @@ const StoryModal = ({ onClose }) => {
         if (editingStory) {
           try {
             const response = await axios.put(
-              `http://localhost:8080/api/user/posts/${editingStory._id}`,
+              `https://final-deploy-1.onrender.com/api/user/posts/${editingStory._id}`,
               {
                 slides,
                 MainCategory: mainCategory,
@@ -95,7 +95,7 @@ const StoryModal = ({ onClose }) => {
       } else {
         // If adding new, make a POST request to create a new story
         const response = await axios.post(
-          "http://localhost:8080/api/user/post",
+          "https://final-deploy-1.onrender.com/api/user/post",
           {
             slides,
             postedBy: name,
