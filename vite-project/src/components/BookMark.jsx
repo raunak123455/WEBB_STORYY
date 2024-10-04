@@ -16,7 +16,7 @@ const Bookmark = ({}) => {
       console.log(userId);
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/user/bookmarks/${userId}`
+          `https://final-deploy-1.onrender.com/api/user/bookmarks/${userId}`
         );
         console.log(response.data.posts);
         setBookmarkedStories(response.data.posts);
