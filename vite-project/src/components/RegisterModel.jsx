@@ -17,7 +17,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/user/register",
+        "https://final-deploy-1.onrender.com/api/user/register",
         {
           name,
           password,
