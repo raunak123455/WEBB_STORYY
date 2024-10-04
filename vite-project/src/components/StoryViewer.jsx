@@ -69,7 +69,7 @@ const StoryViewer = ({ post, story, onClose }) => {
     const fetchLikeCount = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/user/post/${postId}/slide/${currentSlide._id}/like`
+          `https://final-deploy-1.onrender.com/api/user/post/${postId}/slide/${currentSlide._id}/like`
         );
         setLikeCount(response.data.likeCount); // Set initial like count
       } catch (error) {
