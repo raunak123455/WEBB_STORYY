@@ -18,7 +18,7 @@ const UserStories = () => {
       if (!loggedIn) return;
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/user/posts/${name}`
+          `https://final-deploy-1.onrender.com/api/user/posts/${name}`
         );
         setStories(response.data.posts); // Assuming 'posts' is the key for posts array in response
         setLoading(false);
