@@ -18,6 +18,7 @@ export const UserProvider = ({ children }) => {
   const [name, setname] = useState(() => {
     // Retrieve the user's name from localStorage
     return localStorage.getItem("name") || "";
+    
   });
   const [MainCategory, setMainCategory] = useState("all");
   const [userId, setUserId] = useState("");
