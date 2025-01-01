@@ -40,8 +40,7 @@
   background-color: #e6f0ff;
   color: #0066cc;
 }
-.add-close-button {
-  position: absolute;
+/* .add-close-button {
   top: 10px;
   right: -280px;
   background: none;
@@ -52,7 +51,20 @@
   top: 0px;
   left: 201px;
   color: black;
-}
+} */
+
+/* .add-close-button {
+  right: -280px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  position: absolute;
+  top: 0px;
+  left: 201px;
+  color: black;
+} */
+
 .modal-body {
   display: flex;
   flex-direction: column;
