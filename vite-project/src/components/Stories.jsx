@@ -11,7 +11,7 @@ const UserStories = () => {
   const [selectedStory, setSelectedStory] = useState(null);
   const [displayedRows, setDisplayedRows] = useState(1); // Number of rows to display
 
-  const { name, loggedIn } = useUser();
+  const { name, loggedIn, edited } = useUser();
 
   useEffect(() => {
     const fetchUserPosts = async () => {
@@ -29,7 +29,7 @@ const UserStories = () => {
     };
 
     fetchUserPosts();
-  }, [loggedIn, name]);
+  }, [loggedIn, name, edited]);
 
   if (loading) {
     return <div>Loading...</div>;
