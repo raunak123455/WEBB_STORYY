@@ -112,6 +112,15 @@ const StoryModal = ({ onClose }) => {
               }
             );
             console.log("Story updated:", response.data);
+            setSlides([
+        { heading: "", description: "", imageUrl: "", category: "", likeCount: 0 },
+        { heading: "", description: "", imageUrl: "", category: "", likeCount: 0 },
+        { heading: "", description: "", imageUrl: "", category: "", likeCount: 0 },
+      ]);
+      setMainCategory(""); // Reset main category
+      setEditingStory(null); // Clear the editingStory state
+      setCurrentSlide(0); // Reset to the first slide
+      setTotalSlides(3);
             setEdited(!edited);
           } catch (error) {
             console.error("Error updating story:", error);
