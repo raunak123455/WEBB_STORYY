@@ -25,7 +25,10 @@ const StoryModal = ({ onClose }) => {
       console.log(editingStory.slides);
       console.log(editingStory._id);
     }
-  }, [editingStory]);
+
+    setTotalSlides(slides.length);
+    console.log("Slides updated:", slides);
+  }, [editingStory, slides]);
 
   useEffect(() => {
     if (openAddStory) {
@@ -46,12 +49,33 @@ const StoryModal = ({ onClose }) => {
     setCurrentSlide(index);
   };
 
+  // const handleAddSlide = () => {
+  //   setSlides([
+  //     ...slides,
+  //     {
+  //       heading: "",
+  //       description: "",
+  //       imageUrl: "",
+  //       category: "",
+  //       likeCount: 0,
+  //     },
+  //   ]);
+  //   setTotalSlides((prev) => prev + 1); // Safely increment totalSlides
+  // };
+
   const handleAddSlide = () => {
     setSlides([
       ...slides,
-      { heading: "", description: "", imageUrl: "", category: "" },
+      {
+        heading: "",
+        description: "",
+        imageUrl: "",
+        category: "",
+        likeCount: 0,
+      },
     ]);
     setTotalSlides(totalSlides + 1);
+    console.log("added");
   };
 
   const handleClick = () => {
@@ -94,6 +118,7 @@ const StoryModal = ({ onClose }) => {
         }
       } else {
         // If adding new, make a POST request to create a new story
+        console.log(slides, name, mainCategory);
         const response = await axios.post(
           "https://final-deploy-1.onrender.com/api/user/post",
           {
@@ -127,15 +152,15 @@ const StoryModal = ({ onClose }) => {
                 Slide {index + 1}
               </button>
             ))}
-            {totalSlides < 6 && (
+            {totalSlides < 7 && (
               <button className="add-slide-button" onClick={handleAddSlide}>
                 Add +
               </button>
             )}
           </div>
-          <button onClick={onClose} className="add-close-button">
-            <img src={close} />
-          </button>
+          {/* <button className="add-close-button"> */}
+          <img src={close} onClick={onClose} />
+          {/* </button> */}
         </div>
 
         <div className="modal-body">
