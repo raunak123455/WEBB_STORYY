@@ -24,6 +24,10 @@ const RegisterModal = ({ isOpen, onClose }) => {
         }
       );
       console.log(response.data); // You can handle the response as needed
+       if (response.data.message === "sucess") {
+        // Corrected comparison
+        // Call the function to update the logged-in state in Header
+        onClose();
     } catch (error) {
       console.error("There was an error!", error);
     }
