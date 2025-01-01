@@ -4,11 +4,11 @@ import "./RegisterModel.css"; // Optional: Add styles for the modal
 import Vector from "../assets/Vector.jpg";
 import axios from "axios";
 
-
 const RegisterModal = ({ isOpen, onClose, handleRegisterSuccess }) => {
   if (isOpen === false) return null; // Don't render if modal is not open
   const [name, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   // Updated handleSubmit function to take 'event' as a parameter
   const handleSubmit = async (name, password) => {
@@ -25,7 +25,7 @@ const RegisterModal = ({ isOpen, onClose, handleRegisterSuccess }) => {
         }
       );
       console.log(response.data); // You can handle the response as needed
-       if (response.data.message === "sucess") {
+      if (response.data.success === true) {
         // Corrected comparison
         // Call the function to update the logged-in state in Header
         handleRegisterSuccess();
@@ -33,8 +33,6 @@ const RegisterModal = ({ isOpen, onClose, handleRegisterSuccess }) => {
         // Set error message if login fails
         setError("Login failed. Please check your credentials.");
       }
-      
-      
     } catch (error) {
       console.error("There was an error!", error);
     }
