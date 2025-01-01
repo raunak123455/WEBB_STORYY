@@ -28,6 +28,10 @@ const RegisterModal = ({ isOpen, onClose }) => {
         // Corrected comparison
         // Call the function to update the logged-in state in Header
         onClose();
+         else {
+        // Set error message if login fails
+        setError("Register failed. Please check your credentials.");
+      }
     } catch (error) {
       console.error("There was an error!", error);
     }
