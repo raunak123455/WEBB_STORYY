@@ -8,6 +8,7 @@ export const UserProvider = ({ children }) => {
   // const [name, setname] = useState("");
   // const [loggedIn, setloggedIn] = useState(false);
   const [openAddStory, setOpenAddStory] = useState(false);
+  const [edited, setEdited] = useState(false);
 
   const [loggedIn, setloggedIn] = useState(() => {
     // Retrieve the logged-in status from localStorage
@@ -48,6 +49,8 @@ export const UserProvider = ({ children }) => {
         setOpenAddStory,
         editingStory,
         setEditingStory,
+        edited,
+        setEdited,
       }}
     >
       {children}
