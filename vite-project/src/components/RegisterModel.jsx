@@ -4,7 +4,7 @@ import "./RegisterModel.css"; // Optional: Add styles for the modal
 import Vector from "../assets/Vector.jpg";
 import axios from "axios";
 
-const RegisterModal = ({ isOpen, onClose }) => {
+const RegisterModal = ({ isOpen, onClose, handleRegisterSuccess }) => {
   if (isOpen === false) return null; // Don't render if modal is not open
   const [name, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -24,18 +24,11 @@ const RegisterModal = ({ isOpen, onClose }) => {
         }
       );
       console.log(response.data); // You can handle the response as needed
-       if (response.data.message === "sucess") {
-        // Corrected comparison
-        // Call the function to update the logged-in state in Header
-        onClose(); }
-         else {
-        // Set error message if login fails
-      }
-    }
-     catch (error) {
+      handleRegisterSuccess();
+    } catch (error) {
       console.error("There was an error!", error);
     }
-  ;
+  };
 
   return (
     <div className="modal-overlay">
@@ -80,6 +73,5 @@ const RegisterModal = ({ isOpen, onClose }) => {
     </div>
   );
 };
-}
 
 export default RegisterModal;
