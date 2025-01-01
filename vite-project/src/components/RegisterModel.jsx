@@ -4,6 +4,7 @@ import "./RegisterModel.css"; // Optional: Add styles for the modal
 import Vector from "../assets/Vector.jpg";
 import axios from "axios";
 
+
 const RegisterModal = ({ isOpen, onClose, handleRegisterSuccess }) => {
   if (isOpen === false) return null; // Don't render if modal is not open
   const [name, setUserName] = useState("");
