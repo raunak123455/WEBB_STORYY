@@ -28,6 +28,9 @@ const Header = () => {
   const handleClose = () => {
     setOpenMobileMenu2(!openMobileMenu2);
   };
+  const handleRegisterSuccess = () => {
+    setOpenRegister(false);
+  };
 
   const handleCloseRegisterModal = () => {
     setOpenRegister(false);
@@ -170,6 +173,8 @@ const Header = () => {
           <RegisterModal
             isOpen={openRegister}
             onClose={handleCloseRegisterModal}
+            handleRegisterSuccess={handleRegisterSuccess}
+
           />
 
           {/* Mobile Menu Icon */}
