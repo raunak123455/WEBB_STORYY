@@ -27,15 +27,16 @@ const RegisterModal = ({ isOpen, onClose }) => {
        if (response.data.message === "sucess") {
         // Corrected comparison
         // Call the function to update the logged-in state in Header
-        onClose();
+        onClose(); }
          else {
         // Set error message if login fails
         setError("Register failed. Please check your credentials.");
       }
-    } catch (error) {
+    }
+     catch (error) {
       console.error("There was an error!", error);
     }
-  };
+  ;
 
   return (
     <div className="modal-overlay">
