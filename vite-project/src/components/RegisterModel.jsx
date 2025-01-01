@@ -30,7 +30,6 @@ const RegisterModal = ({ isOpen, onClose }) => {
         onClose(); }
          else {
         // Set error message if login fails
-        setError("Register failed. Please check your credentials.");
       }
     }
      catch (error) {
@@ -81,5 +80,6 @@ const RegisterModal = ({ isOpen, onClose }) => {
     </div>
   );
 };
+}
 
 export default RegisterModal;
