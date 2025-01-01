@@ -26,6 +26,7 @@ const RegisterModal = ({ isOpen, onClose, handleRegisterSuccess }) => {
       );
       console.log(response.data); // You can handle the response as needed
       handleRegisterSuccess();
+      
     } catch (error) {
       console.error("There was an error!", error);
     }
