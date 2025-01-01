@@ -14,7 +14,7 @@ const StoryModal = ({ onClose }) => {
   ]);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [totalSlides, setTotalSlides] = useState(3);
-  const { name, editingStory, setEditingStory } = useUser();
+  const { name, editingStory, setEditingStory, edited, setEdited } = useUser();
   const [mainCategory, setMainCategory] = useState(""); // State for main category (first slide)
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const StoryModal = ({ onClose }) => {
 
     setTotalSlides(slides.length);
     console.log("Slides updated:", slides);
-  }, [editingStory, slides]);
+  }, [editingStory, edited]);
 
   useEffect(() => {
     if (openAddStory) {
@@ -112,6 +112,7 @@ const StoryModal = ({ onClose }) => {
               }
             );
             console.log("Story updated:", response.data);
+            setEdited(!edited);
           } catch (error) {
             console.error("Error updating story:", error);
           }
