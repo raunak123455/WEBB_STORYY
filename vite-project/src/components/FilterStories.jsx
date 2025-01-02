@@ -11,6 +11,7 @@ const FilterStories = ({ MainCategory }) => {
   const [loading, setLoading] = useState(true);
   const [stories, setStories] = useState([]);
   const [selectedStory, setSelectedStory] = useState(null);
+  const [displayedRows, setDisplayedRows] = useState(1); // Number of rows to display
   const { loggedIn } = useUser();
 
   useEffect(() => {
@@ -49,19 +50,29 @@ const FilterStories = ({ MainCategory }) => {
       </>
     );
   }
+  const storiesToShow = stories.slice(0, displayedRows * 4); // Show 4 stories per row
+  const handleShowMore = () => {
+    setDisplayedRows(displayedRows + 1);
+  };
 
   return (
     <div className="category-stories">
       {/* <button onClick={handleClick}>CT</button> */}
       <h1>Top Stories for {MainCategory}</h1>
       <div className="story-list">
-        {stories.map((story, index) => (
+        {storiesToShow.map((story, index) => (
           <StoryCard2
             key={index}
             slides={story.slides}
             onClick={() => handleStoryClick(story)}
           />
         ))}
+
+        {stories.length > storiesToShow.length && (
+          <button className="show-more-btn" onClick={handleShowMore}>
+            Show More
+          </button>
+        )}
       </div>
 
       {selectedStory && (
