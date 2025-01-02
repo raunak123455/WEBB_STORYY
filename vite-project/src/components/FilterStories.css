@@ -8,6 +8,17 @@
   padding: 0 15px;
 }
 
+.show-more-btn {
+  padding: 10px 20px;
+  background-color: #ff7373;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  width: 140px;
+  margin-left: 410px;
+}
+
 .category-stories h1 {
   font-size: 28px;
   font-weight: bold;
